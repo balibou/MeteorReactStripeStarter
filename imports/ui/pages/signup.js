@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Row, Col, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import { handleSignup } from '../../modules/signup';
+import { Plans } from './plans';
 
 export class Signup extends React.Component {
   componentDidMount() {
@@ -59,6 +60,12 @@ export class Signup extends React.Component {
               placeholder="Password"
             />
           </FormGroup>
+          <h4 className="page-header">Payment Information</h4>
+          <label>Which plan sounds <em>amazing</em>?</label>
+          <Plans />
+          <div className="form-group">
+            {/* {{> Template.dynamic template="creditCard" data="signup"}} */}
+          </div>
           <Button type="submit" bsStyle="success">Sign Up</Button>
         </form>
         <p>Already have an account? <Link to="/login">Log In</Link>.</p>
